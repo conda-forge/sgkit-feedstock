@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.2.0a1" %}
-{% set sha256 = "bf67ceeff4e0e81e79d7f40423b90ac0d2d580def98ee9a7b163485e32498f75" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "71b0fef8a4b3a28fdd7227d45a82854155b2b4c9b9f1defe4248d834b23dc1fe" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -54,7 +54,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Statistical genetics toolkit"
+  summary: Statistical genetics toolkit
   doc_url: https://pystatgen.github.io/sgkit
   dev_url: https://github.com/pystatgen/sgkit
 
