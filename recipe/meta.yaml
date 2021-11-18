@@ -18,22 +18,23 @@ build:
 requirements:
   host:
     - python >=3.7
-    - setuptools
+    - setuptools >=41.2  # For pkg_resources
     - setuptools_scm
     - pip
 
   run:
     - python >=3.7
+    # Pinning based on setup.cfg version in 0.4.0
+    - numba !=0.54.*
+    - dask !=2021.5.1
+    - distributed !=2021.5.1
+    - fsspec !=2021.6.*
     - numpy
-    - numba
     - xarray
-    - dask
-    - distributed
     - dask-ml
     - scipy
     - zarr
     - typing-extensions
-    - fsspec
     # bgen support
     - rechunker
     - cbgen
