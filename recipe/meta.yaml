@@ -24,17 +24,17 @@ requirements:
 
   run:
     - python >=3.7
-    # Pinning based on setup.cfg version in 0.5.0
-    - numba !=0.54.*
-    - dask >=2021.10.0, <=2022.01.0
-    - distributed >=2021.10.0, <=2022.01.0
-    - fsspec !=2021.6.*
-    - numpy <1.22
+    # Pinning based on setup.cfg version in 0.6.0
+    - numpy
     - xarray
+    - dask >=2022.01.0
+    - distributed >=2022.01.0
     - dask-ml
     - scipy
     - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2
+    - numba
     - typing-extensions
+    - fsspec !=2021.6.*
     # bgen support
     - rechunker
     - cbgen
