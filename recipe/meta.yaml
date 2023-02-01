@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "7a82542849071c585857bfc6caf5e7fc388a850d50886dfd1d5138210adff913" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "1468a1d14c552a06ec15ca1022c1c095e55b68911d9b273795f71add83368d9f" %}
 
 package:
   name: {{ name|lower }}
