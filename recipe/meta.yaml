@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "7a82542849071c585857bfc6caf5e7fc388a850d50886dfd1d5138210adff913" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "1468a1d14c552a06ec15ca1022c1c095e55b68911d9b273795f71add83368d9f" %}
 
 package:
   name: {{ name|lower }}
@@ -24,17 +24,17 @@ requirements:
 
   run:
     - python >=3.7
-    # Pinning based on setup.cfg version in 0.5.0
-    - numba !=0.54.*
-    - dask >=2021.10.0, <=2022.01.0
-    - distributed >=2021.10.0, <=2022.01.0
-    - fsspec !=2021.6.*
-    - numpy <1.22
+    # Pinning based on setup.cfg version in 0.6.0
+    - numpy
     - xarray
+    - dask >=2022.01.0
+    - distributed >=2022.01.0
     - dask-ml
     - scipy
     - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2
+    - numba
     - typing-extensions
+    - fsspec !=2021.6.*
     # bgen support
     - rechunker
     - cbgen
