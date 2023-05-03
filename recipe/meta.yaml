@@ -17,13 +17,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - setuptools >=41.2  # For pkg_resources
     - setuptools_scm
     - pip
 
   run:
-    - python >=3.7
+    - python >=3.8
     # Pinning based on setup.cfg version in 0.6.0
     - numpy
     - xarray
