@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "b8e482f9b4c757032af667a879bbdbea36b46e1472b3d2bbe4c5e617f1ebe31f" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "ea4a1f4518056cd5e251524e62df16c631395a89cade93db9b30b8d6538426b2" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
