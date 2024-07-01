@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.8.0" %}
-{% set sha256 = "ea4a1f4518056cd5e251524e62df16c631395a89cade93db9b30b8d6538426b2" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "e08e2610ab3ca41b65bc79c171fb179fa7652129f8b9d74bf81eb15fa39e2f01" %}
 
 package:
   name: {{ name|lower }}
@@ -17,33 +17,37 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - setuptools >=41.2  # For pkg_resources
     - setuptools_scm
     - pip
 
   run:
-    - python >=3.8
-    # Pinning based on setup.cfg version in 0.6.0
-    - numpy
+    - python >=3.9
+    # Pinning based on setup.cfg version in 0.9.0
+    - numpy <2
     - xarray
     - dask >=2022.01.0
     - distributed >=2022.01.0
     - dask-ml
     - scipy
-    - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2
+    - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2,<3
     - numba
     - typing-extensions
     - fsspec !=2021.6.*
+    - scikit-learn
+    - pandas
     # bgen support
     - rechunker
-    - cbgen
+    - cbgen <1.0.5
     # plink support
     - partd
     - bed-reader
     # vcf support. We can't directly depend on cyvcf2 here because
     # it's in bioconda.
     #- cyvcf2
+    - aiohttp
+    - requests
     - yarl
 
 test:
