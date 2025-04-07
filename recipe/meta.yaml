@@ -28,7 +28,7 @@ requirements:
     - numpy <2.2
     - xarray <2025.03.1
     - dask >=2022.01.0, <=2024.8.0
-    - distributed >=2022.01.0, <= 2024.8.0
+    - distributed >=2022.01.0, <=2024.8.0
     - dask-ml
     - scipy
     - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2,<3
@@ -39,7 +39,9 @@ requirements:
     - pandas
     # bgen support
     - rechunker
-    - cbgen >1.0.5
+    # we can't directly depend on cbgen as a numpy-2 compatible version
+    # is not in conda
+    #- cbgen >1.0.5
     # plink support
     - partd
     - bed-reader
