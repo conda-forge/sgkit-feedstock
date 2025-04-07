@@ -24,11 +24,11 @@ requirements:
 
   run:
     - python >={{ python_min }}
-    # Pinning based on setup.cfg version in 0.9.0
-    - numpy <2
-    - xarray
-    - dask >=2022.01.0
-    - distributed >=2022.01.0
+    # Pinning based on pyproject.toml version in 0.10.0
+    - numpy <2.2
+    - xarray <2025.03.1
+    - dask >=2022.01.0, <=2024.8.0
+    - distributed >=2022.01.0, <= 2024.8.0
     - dask-ml
     - scipy
     - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2,<3
@@ -39,16 +39,10 @@ requirements:
     - pandas
     # bgen support
     - rechunker
-    - cbgen <1.0.5
+    - cbgen >1.0.5
     # plink support
     - partd
     - bed-reader
-    # vcf support. We can't directly depend on cyvcf2 here because
-    # it's in bioconda.
-    #- cyvcf2
-    - aiohttp
-    - requests
-    - yarl
 
 test:
   requires:
