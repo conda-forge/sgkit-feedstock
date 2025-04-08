@@ -1,6 +1,6 @@
 {% set name = "sgkit" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "e08e2610ab3ca41b65bc79c171fb179fa7652129f8b9d74bf81eb15fa39e2f01" %}
+{% set version = "0.10.0" %}
+{% set sha256 = "f9b5ff1fa75f89c910788857ea13d2f5c4ae0634464a86f3930a325ecc5e6f3b" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -24,11 +24,11 @@ requirements:
 
   run:
     - python >={{ python_min }}
-    # Pinning based on setup.cfg version in 0.9.0
-    - numpy <2
-    - xarray
-    - dask >=2022.01.0
-    - distributed >=2022.01.0
+    # Pinning based on pyproject.toml version in 0.10.0
+    - numpy <2.2
+    - xarray <2025.03.1
+    - dask >=2022.01.0, <=2024.8.0
+    - distributed >=2022.01.0, <=2024.8.0
     - dask-ml
     - scipy
     - zarr >=2.10.0, !=2.11.0,!=2.11.1,!=2.11.2,<3
@@ -39,16 +39,12 @@ requirements:
     - pandas
     # bgen support
     - rechunker
-    - cbgen <1.0.5
+    # we can't directly depend on cbgen as a numpy-2 compatible version
+    # is not in conda
+    #- cbgen >1.0.5
     # plink support
     - partd
     - bed-reader
-    # vcf support. We can't directly depend on cyvcf2 here because
-    # it's in bioconda.
-    #- cyvcf2
-    - aiohttp
-    - requests
-    - yarl
 
 test:
   requires:
